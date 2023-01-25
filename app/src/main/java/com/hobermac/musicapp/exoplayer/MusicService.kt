@@ -19,6 +19,7 @@ import com.hobermac.musicapp.exoplayer.callbacks.MusicPlaybackPreparer
 import com.hobermac.musicapp.exoplayer.callbacks.MusicPlayerEventListener
 import com.hobermac.musicapp.exoplayer.callbacks.MusicPlayerNotificationListener
 import com.hobermac.musicapp.other.Constants.MEDIA_ROOT_ID
+import com.hobermac.musicapp.other.Constants.NETWORK_ERROR
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -164,6 +165,7 @@ class MusicService : MediaBrowserServiceCompat() {
                             isPlayerInitialized = true
                         }
                     } else {
+                        mediaSession.sendSessionEvent(NETWORK_ERROR, null)
                         result.sendResult(null)
                     }
                 }
