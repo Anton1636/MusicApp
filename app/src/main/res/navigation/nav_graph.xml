@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/song">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hobermac.musicapp.ui.fragments.HomeFragment"
+        android:label="HomeFragment"/>
+
+    <fragment
+        android:id="@+id/song"
+        android:name="com.hobermac.musicapp.ui.fragments.Song"
+        android:label="SongFragment" />
+
+    <action android:id="@+id/globalActionToSongFragment"
+        app:destination="@+id/songFragment"/>
 </navigation>
